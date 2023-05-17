@@ -2,7 +2,7 @@ import java.util.Scanner
 
 fun main() {
     val minCommission = 3500// в копейках
-    val standartCommission = 0.75 //в процентах
+    val standartCommission = 0.0075
     var commission = 0
 
     println("Добро пожаловать в программу перевода денег!")
@@ -10,6 +10,7 @@ fun main() {
     while (true) {
         println("Введите сумму перевода:")
         val amount = scan.nextInt()
+
         if (amount <= minCommission / 100) {
             println("Минимальная комиссия за перевод составляет: 35 руб, введите сумму больше минимальной комиссии")
             continue
@@ -17,10 +18,11 @@ fun main() {
             commission = (amount * standartCommission).toInt()
             if (commission < minCommission / 100) {
                 commission = 35
+
             }
         }
 
-        println(commission)
+        println("Комиссия составит: " + commission)
 
     }
 }
